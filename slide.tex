@@ -1,0 +1,259 @@
+\documentclass[compress]{beamer}
+\setbeamerfont{institute}{size=\small}
+
+\usepackage{amsmath,amssymb}
+\usepackage{color, colortbl}
+%\usepackage[caption = false]{subfig}
+\usepackage{caption}
+\usepackage{subfig}
+\usepackage{color, colortbl}
+
+\usepackage[english]{babel}
+\usepackage{lmodern}% http://ctan.org/pkg/lm
+\usepackage{tikz}
+\usepackage{booktabs,dcolumn}
+\usepackage{tabularx}
+\usepackage{appendixnumberbeamer}
+\usepackage{hyperref}
+\usepackage{bbm}
+
+\makeatletter
+\newcommand{\srcsize}{\@setfontsize{\srcsize}{5pt}{5pt}}
+\makeatother
+\newcommand{\sym}[1]{#1}
+
+\def\indep{\perp\!\!\!\perp}
+\newcommand{\var}{\operatorname{Var}}
+\newcommand{\cov}{\operatorname{Cov}}
+\newcommand{\corr}{\operatorname{Corr}}
+\newcommand{\logit}{\operatorname{logit}}
+\newcommand{\sgn}{\operatorname{sgn}}
+\newcommand{\argmax}{\operatorname{arg\,max}}
+\newcommand{\ie}{\emph{i.e.\ }}
+\newcommand{\eg}{\emph{e.g.\ }}
+\newtheorem{proposition}{Proposition}
+
+\definecolor{yellow}{rgb}{1,1,0}
+\definecolor{olive}{rgb}{0.3, 0.4, .1}
+\definecolor{grey}{rgb}{0.7421875,0.7421875,0.7421875}
+\definecolor{blue}{rgb}{0.01, 0.28, 1.0}
+\definecolor{cb}{rgb}{0.0, 0.18, 0.39} %coolblack
+
+\parskip = 0.15in
+
+%\usetheme{Warsaw}
+%\useoutertheme[subsection=false]{miniframes}
+%\usecolortheme{seagull}
+%\useoutertheme{infolines}
+\setbeamertemplate{headline}[default]
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{theorems}[number = false]
+\setbeamertemplate{caption}[number = false]
+%\setbeamertemplate{caption}{\insertcaption}
+
+%\usetheme{Frankfurt}
+
+
+
+
+\usetheme{Singapore}
+
+
+\usepackage[utf8]{inputenc}
+
+\title{Alpha beta gamma}
+\author[] {Lee$^1$ \quad \quad KeMeng$^2$ \quad \quad }
+\institute{$^1$Tsinghua University \quad $^2$UIBE}
+\date{November 2022}
+
+\begin{document}
+	
+	\maketitle
+	
+	
+	
+	\AtBeginSection[]{\begin{frame}<beamer>{ok}\tableofcontents[currentsection,currentsubsection]\end{frame}}
+	
+	
+	
+	
+	\section{1.Introduction}
+	\begin{frame}
+		 the reserch \\
+		 and what's more \\
+		 kjhgf
+	\end{frame} 
+	
+	\begin{frame}{Why the Spatial Model}
+		\begin{itemize} \setlength{\itemsep}{15pt}
+			\item Land subsidy varies a lot across regions and the distribution of land subsidy matters
+			\begin{itemize} \setlength{\itemsep}{10pt}
+				\item Accounting regional heterogeneity: productivity, amenity, land supply, market access
+			\end{itemize}
+			\item The effect of land subsidy is partly shaped by its interaction with trade and migration
+			\begin{itemize} \setlength{\itemsep}{10pt}
+				\item Workers decide where to live as response of land subsidy, which in turn affects agglomeration and productivity
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
+	
+	
+	\begin{frame}{提纲}
+		\tableofcontents
+		% You might wish to add the option [pausesections]
+	\end{frame}
+	
+	
+	
+	\section{2.background}
+	
+	
+	
+	\subsection{1.fact}
+	\begin{frame}{fact}
+%		\centerline{\includegraphics[width=12cm,height=6cm]{fig.png}}
+%		\begin{block}{\tiny sources:}
+%			\songti\tiny
+%			1.UN World Population Prospects for 2015 \\
+%			2.IFR and ILO
+%		\end{block}
+	\end{frame}
+	
+	
+	
+	
+	\subsection{2.liter}
+	\begin{frame}{liter}
+		the first is \\
+		the second
+	\end{frame}
+	
+	\begin{frame}{liter}
+		the third is \\
+		the forth
+	\end{frame}
+	
+	\begin{frame}{liter}
+		the third is \\
+		the forth
+	\end{frame}
+	
+	
+	
+	\section{3.empirical strategy}
+	
+	\subsection{1.design}
+	\begin{frame}{equation}
+		$$Y_{ijt}=\alpha + \beta X_{ijt} + \gamma_{i} +\gamma_{j} +\gamma_{t} +\epsilon{ijt} $$
+	\end{frame}
+	
+	\begin{frame}{result}
+		\begin{table} \footnotesize
+			\centering
+			\caption{Effects of PM2.5 on decision making by group}
+			\begin{tabular}{llccccccccc}
+				\toprule
+				&  & \multicolumn{2}{c}{$talk time\leq 22s$}          &  & \multicolumn{2}{c}{$22s\textless talk time\leq 60s$}    &  & \multicolumn{2}{c}{$talk time\textgreater 60s$}\\
+				&  & (1)     & (2)   & &  (3) & (4)  && (5)  & (6)        \\
+				\cline{3-4} \cline{6-7} \cline{9-10}
+				
+				Daily PM2.5 ($\mu g/m^{3}$)/100          && 0.004  &         && 0.099\sym{**}       &       && 0.028  &   \\
+				&& (0.012) &         &&  (0.039)      &     &&(0.031)    &     \\
+				
+				1[Daily PM2.5$>$25 ]        &&          &0.001      &&       &0.034\sym{**}        &&     &0.010              \\
+				&&          &(0.004)    &&       &(0.015)              &&     &(0.011)     \\
+				
+				
+				%\cline{1-7}
+				
+				$Weather Controls$             &  & Y     &Y       & &Y   &Y    &  & Y    &Y     &  \\
+				$City \times Quarter$  FE        &  & Y        &Y        & &Y   &Y    &  & Y    &Y     & \\
+				$City \times Weekday$  FE        &  & Y        &Y        & &Y   &Y    &  & Y    &Y     & \\
+				Date FE                          &  & Y        &Y        & &Y   &Y    &  & Y    &Y     &  \\
+				
+				%\cline{1-7}
+				
+				mean of Dep.Var             &  & 0.029      &0.029     & &0.435   &  0.435     & & 0.630   & 0.630 &   \\
+				
+				First-stage F       &  & 272.75      &69.97    &   &267.22 & 72.74    & &266.00 &   68.75 &  \\
+				
+				Observations                   &  & 92,221    &92,221  &  &172,960  &  172,960  & & 177,830  & 177,830   & \\
+				
+				%R-squared(iv?????$R^{2}$)                      &  & 0.044      & 0.044     &0.044 &   0.044   &   0.044    \\
+				
+				\bottomrule
+			\end{tabular}
+		\end{table}
+	\end{frame}
+	
+	
+	\begin{frame}{Welfare Gain from Optimal Subsidy}
+		\begin{table}[htbp]\centering
+			\begin{tabular}{l*{1}{c}}
+				\hline\hline
+				
+				&\multicolumn{1}{c}{Welfare Gain (\%)}\\
+				\hline
+				Benchmark &0.071 \\ [0.5em]
+				Lower trade cost &0.166 \\[0.5em]
+				Lower migration cost &0.06  \\[0.5em]
+				\hline
+			\end{tabular}
+		\end{table}
+	\end{frame}
+	
+	
+	
+	
+	
+	\section{4.figs}
+	
+	\subsection{the story of gamma}
+	\begin{frame}
+		
+		\begin{block}{\small one.ok please}\scriptsize
+			\centering{1.IFR} \\
+			2.Comtrade\\
+			3.Comtrade \\
+			4.USPTO\\
+		\end{block}
+		\centering{nihao,woshilihua}
+		\begin{block}{\small one.ok please}\scriptsize
+			1.IFR\\
+			2.Comtrade\\
+			3.Comtrade \\
+			4.USPTO\\
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}
+%		\centerline{\includegraphics[width=5cm,height=4cm]{fig.png}}
+%		\centerline{\includegraphics[width=5cm,height=4cm]{fig2.png}}
+	\end{frame}
+	
+	
+	\section{5.result}
+	
+	\subsection{the story of gamma}
+	\begin{frame}
+		the paper tells us that dont trust Martin \\
+		you can trust Allen anytime
+	\end{frame}
+	
+	\begin{frame}{Why the Spatial Model}
+		\begin{itemize} \setlength{\itemsep}{15pt}
+			\item Land subsidy varies a lot across regions and the distribution of land subsidy matters
+			\begin{itemize} \setlength{\itemsep}{10pt}
+				\item Accounting regional heterogeneity: productivity, amenity, land supply, market access
+			\end{itemize}
+			\item The effect of land subsidy is partly shaped by its interaction with trade and migration
+			\begin{itemize} \setlength{\itemsep}{10pt}
+				\item Workers decide where to live as response of land subsidy, which in turn affects agglomeration and productivity
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
+	
+\end{document}
+
+
